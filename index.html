@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Kaleidoscope</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #eee;
+        }
+        #kaleidoscopeCanvas {
+            border: 1px solid #000;
+            margin-top: 20px;
+        }
+        #controls {
+            margin-top: 10px;
+        }
+        input, button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <input type="file" id="imageLoader" name="imageLoader" accept="image/*"/>
+        <button onclick="loadImage()">Upload Image</button>
+        <label for="symmetry">Symmetry:</label>
+        <input type="range" id="symmetry" min="4" max="20" value="6">
+        <label for="rotation">Rotation:</label>
+        <input type="range" id="rotation" min="0" max="360" value="0">
+        <button onclick="clearCanvas()">Clear Canvas</button>
+    </div>
+    <canvas id="kaleidoscopeCanvas" width="800" height="800"></canvas>
+    <script src="kaleidoscope.js"></script>
+</body>
+</html>
